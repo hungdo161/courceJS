@@ -55,15 +55,105 @@ Vòng lặp - Loop
 
 */
 
-const getRandNumbers = function(min,max,length) {
-    const result = [];
-    for (let i = 0; i <= length ; i++) {
-        result[i] = Math.random()*(max - min) + min;  
+/* Cấu trúc của vòng for - ứng dụng
+
+VD: Tính tổng các phần tử trong 1 mảng cho trước
+function getTotal (value) {
+    total = 0;
+    for (let i = 0; i < value.length; i++) {
+        total = total + value[i];
     }
-    return result;
-    
+
+    return total;
 }
-console.log(result)
+
+console.log(getTotal([1,2,3,4,5,6])) => // kết quả = 21;
 
 
+*/
 
+
+// var myArray = [
+//     'Javascript',
+//     'PHP',
+//     'Java',
+//     'Dart'
+// ]
+
+// const arrayLength = myArray.length;
+
+// for (var i = 0; i < arrayLength; i++) {
+//     console.log(myArray[i])
+// };
+
+// var orders = [
+//     {
+//         name: 'Khoá học HTML - CSS Pro',
+//         price: 3000000
+//     },
+//     {
+//         name:'Khoá học JavaScript Pro',
+//         price: 2500000
+//     },
+//     {
+//         name:'Khoá học React Pro',
+//         price: 3200000
+//     },
+// ]
+
+
+// console.log(orders[0].price)
+
+
+// const getTotal = function (value) {
+//     let ordersLength = value.length;
+
+//     let total = 0;
+//     for(let i = 0; i < ordersLength; i++) {
+//         total = total + value[i].price
+//     }
+//     return total;
+// }
+
+// console.log(getTotal(orders))
+
+// const getDemoElement = document.querySelector('#demo');
+// getDemoElement.innerHTML = getTotal(orders);
+
+
+// const myInfo = {
+//     // name: 'hung do',
+//     // age: 30,
+//     // address: 'Ha noi,Viet Nam'
+// }
+
+// const printDemo = function (value) {
+//     const getElementDemo = document.querySelector('#demo')
+
+//     for(var key in value) {
+//         key + `: ${myInfo[key]}`
+//     }
+//     return getElementDemo.innerHTML = key + `: ${myInfo[key]}`;
+// }
+
+
+// printDemo(myInfo)
+
+
+// for (let key in myInfo) {
+//     console.log(key + `: ${myInfo[key]}`)
+//     const getElementDemo = document.querySelector('#demo')
+//     getElementDemo.innerHTML = key + `: ${myInfo[key]}`
+// }
+
+
+const languages = [
+    'JavaScript',
+    'PHP',
+    'Ruby',
+    'Java'
+]
+
+for(let key in languages) {
+    console.log(languages[key])
+}
