@@ -147,13 +147,240 @@ console.log(getTotal([1,2,3,4,5,6])) => // kết quả = 21;
 // }
 
 
-const languages = [
-    'JavaScript',
-    'PHP',
-    'Ruby',
-    'Java'
-]
+// const languages = [
+//     'JavaScript',
+//     'PHP',
+//     'Ruby',
+//     'Java'
+// ]
 
-for(let key in languages) {
-    console.log(languages[key])
+// for(let key in languages) {
+//     console.log(languages[key])
+// }
+
+// Trả về 1 dãy số ngẫu nhiên có length phần tử
+// const getRandomNumber = function (min,max,length) {
+//     const result = [];
+//     for (let i = 0; i <= length ; i++) {
+//        var output = Math.floor(Math.random()*(max-min) + min);
+//         result.push(output)
+//     }
+//     return result;
+// }
+
+// console.log(getRandomNumber(1,10,10))
+
+// Trả về tổng giá trị các phần tử của mảng
+// const getTotal = function(array) {
+//     let sum = 0;
+//     let arrayLength = array.length
+//     for(let i = 0; i < arrayLength; i++) {
+//         sum = sum + array[i];
+//     }
+//     return sum;
+// }
+
+// console.log(getTotal([1,2,3]))
+
+
+// Tính tổng giá trị đơn hàng
+// var orders = [
+//     {
+//     name: 'Khoá học HTML - CSS Pro',
+//     price: 300000
+//     },
+//     {
+//     name: 'Khoá học Javascript Pro',
+//     price: 250000
+//     },
+
+//     {
+//     name: 'Khoá học React Pro',
+//     price:  320000
+//     }       
+// ]
+
+// const getTotal = function(value) {
+//     let result = 0;
+//     for(let i = 0; i < value.length; i++) {
+//         let valuePrice = value[i].price; 
+//         result = result + valuePrice
+//     }
+//     return result
+// }
+
+// const getElementDemo = document.querySelector('#demo');
+// getElementDemo.innerHTML = getTotal(orders);
+
+// console.log(getTotal(orders))
+
+
+//  Vòng lặp for/in
+// const myInfo = {
+//         name:'Hung Do',
+//         age: 30
+// }
+
+// for( let key in myInfo) {
+//     console.log(`Thuộc tính ${key} có giá trị ${myInfo[key]}`)
+// }
+
+// console.log(myInfo)
+
+// const run = function (object) {
+//     const output = [];
+//     for(key in object) {
+//         result = `Thuộc tính ${key} có giá trị ${object[key]}`
+//         output.push(result)
+//     }
+//     return output
+// }
+
+// console.log(run({ name: 'Nguyen Van A', age: 16 }))
+
+// const languages = [
+//     'Javascript',
+//     'PHP',
+//     'Java'
+// ];
+
+// for (var value of languages) {
+//     console.log(value)
+// }
+
+// var myInfo = {
+//     name: 'Hung Do',
+//     age: 18
+// }
+// Object.values(myInfo)
+
+// for (var value of Object.values(myInfo)) {
+//     console.log(value)
+// }
+
+// Vòng lặp while/ while loop
+
+// var i = 0; 
+// var isSuccess = false;
+
+// do {
+//     i++;
+// // console.log('Nap the lan ' + i)
+//     if(true) {
+//         console.log('Nap the lan ' + i)
+//     }
+// } while ( !isSuccess && i <= 3 )
+
+
+// let i = 0 ;
+
+// while (i < 10) {
+//     i++
+//     console.log(i)
+// }
+
+
+// let i = 0;
+// let isSuccess = false;
+
+// do {
+//     i++;
+//     console.log('Nap the lan' + i)
+
+//     if (true) {
+//         isSuccess = true;
+//     }
+// } while (i < 3 && !isSuccess);
+
+
+// Break and continue in loop
+
+// for (let i = 0; i < 10; i++) {
+//     if (i % 2 !=0 ) {
+//         continue;
+//     }
+//     console.log(i)
+// }
+
+
+// Vòng lặp lồng nhau / Nested loop
+
+// var myArray = [
+//     [1,2],
+//     [3,4],
+//     [5,6]
+// ];
+
+// for (let i = 0; i < myArray.length; i++) {
+//     console.log(myArray[i])
+//     for(let j = 0; j < myArray[i].length; j++ ) {
+//         console.log(myArray[i][j])
+//     }
+// };
+
+// for (var i =100; i > 0 ; i -= 5) {
+//     console.log(i)
+// }
+
+// Đệ quy là gì? Học về đệ quy . 
+
+// var array = ['a','b','c','a','b','c'];
+
+// function unique (arr) {
+//     var newArray = [];
+//     for(var i = 0; i < arr.length; i++) {
+//         if(newArray.indexOf(arr[i]) === -1) {
+//             newArray.push(arr[i])
+//         }
+//     }
+//     return newArray;
+// } 
+
+// console.log(unique(array))
+
+// function unique(arr) {
+//     var formArr = arr.sort()
+//     var newArr = [formArr[0]]
+//     for (let i = 1; i < formArr.length; i++) {
+//       if (formArr[i] !== formArr[i - 1]) {
+//         newArr.push(formArr[i])
+//       }
+//     }
+//     return newArr
+//   }
+//   console.log(unique([1, 1, 2, 3, 5, 3, 1, 5, 6, 7, 4]))
+
+
+// var array = ['a','b','c','a','b','c'];
+
+// console.log(array.sort()[0])
+
+
+
+// function unique(arr) {
+//     var formArr = arr.sort();
+//     var newArray = [formArr[0]]
+//     for(let i = 1; i < formArr.length; i++) {
+//         if(formArr[i] !== formArr[i - 1]) {
+//             newArray.push(formArr[i])
+//         }
+//     }
+//     return newArray;
+// }
+
+// console.log(unique(array))
+
+// đệ quy
+
+function countDown(number) {
+    if(number > 0) {
+        console.log(number);
+        return countDown(number - 1)
+    }
+    return number;
 }
+
+countDown(10);
+
+
+
