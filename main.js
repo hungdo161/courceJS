@@ -16,13 +16,15 @@ var today = new Date ();
         'Friday',
         'Saturday'
     ];
-
+    
     var hour = today.getHours();
     var minute = today.getMinutes();
     var second = today. getSeconds();
 
     var prepand = (hour > 12)? " PM " : " AM "; // Prepand: chuẩn bị trước
-    hour = (hour >= 12) ? `0${hour - 12}` : hour;
+    hour = (hour >= 12) ? `${hour - 12}` : hour
+    hour = (hour < 10)? `0${hour}` : `${hour}`;
+    
     minute = (minute < 10)? `0${minute}`:minute;
     second = (second < 10)?`0${second}`:second;
 
@@ -91,7 +93,37 @@ acreageResultElement.innerHTML = `Result = : ${acreage}`;
 
 const runWord = 'W3resource' ;
 
-console.log(runWord)
+const animateString = function(target) {
+    var idElement = document.querySelector('#target')
+    var textNote = idElement.childNodes[0]; // assuming no other children
+    var text = textNote.data;
+
+    setInterval(function() {
+            text = text[text.length -1] + text.substring(0,text.length -1);
+            textNote.data = text;
+        },100)
+}
+
+setTimeout(animateString(),1000) // コメントアウトしたら、ずっと動きになります。
 
 
+// Exercises 6: Viết chương trình Javascript để xác định xem 1 năm đã cho có phải là năm nhuận
+// trong lịch Gregorian không? 
+
+const leapYear = function(year) {
+    if(year % 100 === 0 && year % 400 === 0 && year % 4 ===0) {
+        return alert('Đây là năm nhuận')
+    } else {
+        return alert('Đây không phải là năm nhuận')
+    }
+};
+
+// leapYear(2000); // コメントアウトしたら、アラートのポップアップが表示される。
+
+// Exercises 7: Viết chương trình javascript để tìm hiểu xem ngày 1 tháng 1 có phải là chủ nhật trong khoảng
+// thời gian từ năm 2014 đến năm 2050 không ?
+
+const resultDay = function () {
     
+}
+
