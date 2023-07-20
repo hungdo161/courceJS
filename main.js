@@ -123,7 +123,37 @@ const leapYear = function(year) {
 // Exercises 7: Viết chương trình javascript để tìm hiểu xem ngày 1 tháng 1 có phải là chủ nhật trong khoảng
 // thời gian từ năm 2014 đến năm 2050 không ?
 
-const resultDay = function () {
-    
+    for(var year = 2014; year <= 2050; year++) {
+        var date = new Date(year,0,1)
+        if(date.getDay() === 0) {
+           var output = `1st January is being a Sunday ${year}`
+        //    console.log(output) //=> コメントアウトしたら、結果が返される。
+        }
+    }
+
+    // Câu hỏi: Giả sử mình muốn in ra 1 list danh sách thì mình phải in trong vòng for à ? 
+
+
+// Exercies 8: Viết chương trình Javascript trong đó chương trình lấy 1 số nguyên 
+//ngẫu nhiên trong khoảng từ 1 đến 10, Sau đó người dùng được nhắc nhập 1 số dự đoán.
+// Chương trình sẽ hiển thị thông báo "Làm tốt lắm" nếu đầu vào khớp với số dự đoán nếu không thì 
+// sẽ hiển thị 'Không khớp'.
+
+const number = Math.ceil(Math.random()*10);
+console.log(number)
+
+const getNumber = prompt('Guess the number between 1 and 10 inclusive');
+
+const getAnswerElement = document.querySelector('.guessANumber');
+
+if(number == getNumber) {
+    getAnswerElement.innerHTMML = `Guess a number: Matched`;
+} else {
+    getAnswerElement.innerHTMML = `Guess a number: Not matched, the number was ${getNumber}`;
 }
+
+
+
+
+
 
