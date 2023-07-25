@@ -3,3 +3,37 @@
 body {
     min-height: 3000px;
 }
+
+.sampleForm {
+    font-style: italic;
+    font-size: 20px;
+}
+
+.no1Number_wraper,
+.no2Number_wraper,
+.button-wraper,
+.resultWraper {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.resultWraper {
+    margin-top: 20px;
+}
+
+.multiButon,
+.divideButon {
+    padding: 2px 5px ;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.result {
+    margin-left: 3px;
+}
+
+
+.exercies11 {
+    font-style: italic;
+    font-size: 18px;
+}

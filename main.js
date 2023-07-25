@@ -153,9 +153,53 @@ const getGuessANumberElement= document.querySelector(".guessANumber");
 // Exercies 9: Tính số ngày còn lại cho đến giáng sinh sắp tới!
 
 
-const getChristmasRemainingDaysElement = document.querySelector('.christmasRemainingDays');
+const getChristmasRemainingDays = document.querySelector('.christmasRemainingDays');
 
-console.log(today)
+const chrismasDay = new Date(today.getFullYear() ,11,25);
+
+if(today.getMonth() == 11 && today.getDate() > 25) {
+    chrismasDay.setFullYear(chrismas.getFullYear + 1);
+} else {
+    var oneDay = 1000*60*60*24;
+    Math.ceil((chrismasDay.getTime() - today.getTime())/ oneDay);
+}
+getChristmasRemainingDays.innerHTML = `${Math.ceil((chrismasDay.getTime() - today.getTime())/ oneDay)} days left until chrismas!`
+
+
+// Exercies 10: Viết chương trình javascript để tính phép nhân và chia 2 số (Note:2 số này được nhập bởi người dùng)
+
+const multiplyBy = function () {
+    var getFirstNumber = document.querySelector('#firstNumber').value;
+    var getSecondNumber = document.querySelector('#secondNumber').value;
+    var getResultElement = document.querySelector('#result');
+    var result = getFirstNumber * getSecondNumber;
+    return getResultElement.innerHTML = result ;
+
+}
+
+const divideBy = function() {
+    var getFirstNumber = document.querySelector('#firstNumber').value;
+    var getSecondNumber = document.querySelector('#secondNumber').value;
+    var getResultElement = document.querySelector('#result');
+    var result = getFirstNumber / getSecondNumber;
+    return getResultElement.innerHTML = result ;
+
+}
+
+// Exercies 11: Viết chương trình Javascript để chuyển đổi nhiệt độ từ độ C sáng độ F.
+// Công thức [C/5 = (f-32)/9 trong đó c = Nhiệt độ tính bằng độ C và f = nhiệt độ tính bằng độ F]
+// Output dự kiến: 
+// 60°C là 140°F; 
+// 45°F là 7,222222222222222°C ; 
+
+// Công thức chuyển đổi từ độ F => C : C = (5(f-32))/9
+// Công thức chuyển từ độ C => F : F = (9C + (32*5))/5
+
+const getFahrenheit = document.querySelector('#fahrenheit')
+const getCelsius = document.querySelector('#celsius')
+
+getFahrenheit.innerHTMl = ``
+
 
 
 
