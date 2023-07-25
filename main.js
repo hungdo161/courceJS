@@ -101,7 +101,7 @@ const animateString = function(target) {
     setInterval(function() {
             text = text[text.length -1] + text.substring(0,text.length -1);
             textNote.data = text;
-        },100)
+        },150)
 }
 
 setTimeout(animateString(),1000) // コメントアウトしたら、ずっと動きになります。
@@ -140,17 +140,23 @@ const leapYear = function(year) {
 // sẽ hiển thị 'Không khớp'.
 
 const number = Math.ceil(Math.random()*10);
-console.log(number)
+const getGuessANumberElement= document.querySelector(".guessANumber");
 
-const getNumber = prompt('Guess the number between 1 and 10 inclusive');
+// const getNumber = prompt('Guess the number between 1 and 10 inclusive');
 
-const getAnswerElement = document.querySelector('.guessANumber');
+// if (getNumber == number){
+//     getGuessANumberElement.innerHTML = 'Good work';
+// }else {
+//     getGuessANumberElement.innerHTML ='Not matched, the number was '+ getNumber;
+// }// コメントアウトしたら、prompt element　が表示される。
 
-if(number == getNumber) {
-    getAnswerElement.innerHTMML = `Guess a number: Matched`;
-} else {
-    getAnswerElement.innerHTMML = `Guess a number: Not matched, the number was ${getNumber}`;
-}
+// Exercies 9: Tính số ngày còn lại cho đến giáng sinh sắp tới!
+
+
+const getChristmasRemainingDaysElement = document.querySelector('.christmasRemainingDays');
+
+console.log(today)
+
 
 
 
