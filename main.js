@@ -134,7 +134,7 @@ const leapYear = function(year) {
     // Câu hỏi: Giả sử mình muốn in ra 1 list danh sách thì mình phải in trong vòng for à ? 
 
 
-// Exercies 8: Viết chương trình Javascript trong đó chương trình lấy 1 số nguyên 
+// Exercise 8: Viết chương trình Javascript trong đó chương trình lấy 1 số nguyên 
 //ngẫu nhiên trong khoảng từ 1 đến 10, Sau đó người dùng được nhắc nhập 1 số dự đoán.
 // Chương trình sẽ hiển thị thông báo "Làm tốt lắm" nếu đầu vào khớp với số dự đoán nếu không thì 
 // sẽ hiển thị 'Không khớp'.
@@ -150,7 +150,7 @@ const getGuessANumberElement= document.querySelector(".guessANumber");
 //     getGuessANumberElement.innerHTML ='Not matched, the number was '+ getNumber;
 // }// コメントアウトしたら、prompt element　が表示される。
 
-// Exercies 9: Tính số ngày còn lại cho đến giáng sinh sắp tới!
+// Exercise 9: Tính số ngày còn lại cho đến giáng sinh sắp tới!
 
 
 const getChristmasRemainingDays = document.querySelector('.christmasRemainingDays');
@@ -166,7 +166,7 @@ if(today.getMonth() == 11 && today.getDate() > 25) {
 getChristmasRemainingDays.innerHTML = `${Math.ceil((chrismasDay.getTime() - today.getTime())/ oneDay)} days left until chrismas!`
 
 
-// Exercies 10: Viết chương trình javascript để tính phép nhân và chia 2 số (Note:2 số này được nhập bởi người dùng)
+// Exercise 10: Viết chương trình javascript để tính phép nhân và chia 2 số (Note:2 số này được nhập bởi người dùng)
 
 const multiplyBy = function () {
     var getFirstNumber = document.querySelector('#firstNumber').value;
@@ -186,7 +186,7 @@ const divideBy = function() {
 
 }
 
-// Exercies 11: Viết chương trình Javascript để chuyển đổi nhiệt độ từ độ C sáng độ F.
+// Exercise 11: Viết chương trình Javascript để chuyển đổi nhiệt độ từ độ C sáng độ F.
 // Công thức [C/5 = (f-32)/9 trong đó c = Nhiệt độ tính bằng độ C và f = nhiệt độ tính bằng độ F]
 // Output dự kiến: 
 // 60°C là 140°F; 
@@ -195,10 +195,108 @@ const divideBy = function() {
 // Công thức chuyển đổi từ độ F => C : C = (5(f-32))/9
 // Công thức chuyển từ độ C => F : F = (9C + (32*5))/5
 
-const getFahrenheit = document.querySelector('#fahrenheit')
-const getCelsius = document.querySelector('#celsius')
+const getFahrenheit = document.querySelector('#fahrenheit') // fahrenheit là độ F 
+const getCelsius = document.querySelector('#celsius') // celsius là độ C
 
-getFahrenheit.innerHTMl = ``
+const celsiusToFahrenheit = function(celsius) {
+    var cTemp = celsius;
+    var cToFahr = cTemp *9/5 +32
+    var message =  cTemp+'\xB0C is ' + cToFahr + ' \xB0F.';
+    getFahrenheit.innerHTML = message;
+}
+
+
+const fahrenheitToCelsius = function(fahrenheit) {
+    var fTemp = fahrenheit; 
+    var fahrenheitToCelsius = (fTemp - 32) * 5 / 9;
+    var message = fTemp + '\xB0F is ' + fahrenheitToCelsius + '\xB0C.' ;
+    getCelsius.innerHTML = message;
+}
+
+celsiusToFahrenheit(60)
+fahrenheitToCelsius(45)
+
+// Exercise 12: Viết chương trình javaScript để lấy URL của trang web(trang tải)
+
+const getURLElement = document.querySelector('.exercius12Result');
+
+const getURL = function() {
+ getURLPage = document.URL;
+ return getURLElement.innerHTML = getURLPage;
+}
+
+
+// Exercise 13: Viết bài tập javascript để tạo 1 biến sử dụng tên do người dùng đặt.
+
+
+const varName = '';
+const n = 120;
+this[varName] = n;
+// console.log(this[varName])
+
+
+
+// Exercise 14: Viết bài tập javascript để lấy phần mở rộng tên tệp(Phần sau dấu chấm).
+
+
+const fileName = "system.php";
+
+// console.log(fileName.split(".").pop())
+
+const fileName2 = "abc.js";
+
+// console.log(fileName2.split(".").pop())
+
+// Exercise 15: Viết chương trình javascript để lấy hiệu giữa 1 số đã cho và 13, 
+// nếu số lớn hơn 13, trả về gấp đôi hiệu tuyệt đối.
+
+function difference(n) {
+    if(n <= 13) {
+        return 13 -n;
+    } else {
+        return (n - 13)*2;
+    }
+}
+
+// console.log(difference(15))
+
+
+// Exercise 16: Viết chương trình javascript để tính tổng của 2 số nguyên đã cho. 
+// Nếu 2 giá trị giống nhau thì trả về gấp 3 lần tổng của chúng. 
+
+
+const sumResult = function(a,b) {
+    if(a == b) {
+        return (a + b)*3;
+    } else {
+        return a + b;
+    }
+}
+
+// console.log(sumResult(2,5))
+
+// Exercise 17: Viết chương trình javascript để tính chênh lệch tuyệt đối giữa 1 số đã chỉ định và 19.
+// Trả về gấp 3 lần chênh lệch tuyệt đối nếu số đã chỉ định lớn hơn 19.
+
+function result17 (a) {
+    if(a > 19) {
+        return (19 - a) *3
+    } else {
+        return Math.abs((a - 19));
+    }
+}
+
+// console.log(result17(5))
+
+
+
+
+
+
+
+
+
+
 
 
 
