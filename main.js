@@ -288,15 +288,92 @@ function result17 (a) {
 
 // console.log(result17(5))
 
+// Exercise 18: Viết chương trình javascript để kiểm tra 1 cặp số và trả về true nếu 1 trong các số là 50,
+// hoặc nếu tổng của chúng là 50.
+
+const getExercise18ResultElement = document.querySelector(".exercise18Result");
+
+function numberCheck (a,b) {
+    if ( a == 50 || b == 50 || a + b == 50) {
+        return true
+    } else {
+        return false
+    }
+}
+
+numberCheck(22,28)
+
+getExercise18ResultElement.innerHTML = numberCheck(20,28);
+
+// Exercise 19: Viết chương trình Javascript để kiểm tra xem 1 số nguyên đã nằm trong khoảng 20 của 100 hay 400;
+
+const getExercise19Result = document.querySelector('.exercise19Result');
+const integerCheck = function (value) {
+    if(Number.isInteger(value) && value + 20 <= 100 && value >= 20 ) {
+        return `${value} is within 20 of 100`;
+    }else if(Number.isInteger(value) && value + 20 <= 400 && value >= 100 ){
+        return `${value} is within 100 of 400`;
+    } else {
+        return false
+    }
+}
+
+
+getExercise19Result.innerHTML = integerCheck(150);
+
+// Exercise 20: Viết chương trình javascript để kiểm tra 2 số nguyên đã cho xem 1 số nguyên dương và 1 số nguyên âm.
+
+const getExercise20Element = document.querySelector(".exercise20Result");
+
+function positiveAndNegativeCheck(x,y) {
+    if(x > 0 && y < 0 || x < 0 && y > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+getExercise20Element.innerHTML = positiveAndNegativeCheck(5,-1)
 
 
 
+// Exercise 21: Viết chương trình javascript để tạo 1 chuỗi khác bằng các thêm "Py" vào trước chuối đã cho,
+// Nếu chuỗi đã cho bắt đầu bằng "Py" thì hãy trả về chuỗi gốc
+
+// ý tưởng: check nếu có Py là 2 chữ đầu thì trả về chuỗi gốc. Nếu không thì thêm "Py" vào rồi trả về chuỗi mới.
+
+const getExercies21Element = document.querySelector('.exercise21Result');
+
+const pyString = function (element) {
+    if(element.slice(0,2) === "Py") {
+        return element
+    }else {
+        return `Py${element}`
+    }
+}
 
 
+getExercies21Element.innerHTML = pyString("exercise21Result");
 
 
+// Exercies 22: Viết chương trình javascript để xoá 1 ký tự ở vị trí đã chỉ định trong chuỗi đã cho 
+// và trả về chuỗi đã sửa đổi. 
+
+const getExercies22Element = document.querySelector('.exercise22Result');
+
+function remove_character(string, characterPosition) {
+    part1 = string.substring(0,characterPosition);
+    part2 = string.substring(characterPosition + 1, string.length);
+    return part1 + part2;
+}
+
+getExercies22Element.innerHTML = remove_character("striing", 3) // string đã được cắt đi chữ i và trả về "String"
 
 
+// Exercise 23: Viết chương trình javascript để tạo 1 chuỗi mới từ một chuỗi đã cho bằng cách thay đổi vị trí
+// của ký tự đầu và ký tự cuối. Độ dài của chuỗi phải lớn hơn hoặc bằng 1.
+
+const getExercies23ResultElement = document.querySelector(".exercies23Result");
 
 
 
