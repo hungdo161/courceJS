@@ -375,6 +375,32 @@ getExercies22Element.innerHTML = remove_character("striing", 3) // string đã �
 
 const getExercies23ResultElement = document.querySelector(".exercies23Result");
 
+function switchCharacter(element) {
+    if(element.length <= 1) {
+        return element
+    } else {
+       var middleCharacter = element.substring(1,element.length - 1);
+       var fristCharacter = element.charAt(0);
+       var lastCharacter = element.charAt(element.length - 1);
+
+       return getExercies23ResultElement.innerHTML =`${element} =>` + `${lastCharacter}${middleCharacter}${fristCharacter}`
+    }
+}
+
+switchCharacter("garenal");
+
+// Exercise 24: Viết chương trình javascript để tạo một chuỗi khác từ một chuỗi đã cho với
+// ký tự đầu tiên của chuỗi đã cho được thêm vào trước và sau.
+
+const getExercies24ResultElement = document.querySelector('.exercies24Result');
+
+function switchCharacter24 (element) {
+    var getFirstCharacter = element.charAt(0);
+    return getExercies24ResultElement.innerHTML = `${getFirstCharacter}${element}${getFirstCharacter}`
+}
+
+console.log(switchCharacter24("Swift"));
+
 
 
 
