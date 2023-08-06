@@ -399,12 +399,139 @@ function switchCharacter24 (element) {
     return getExercies24ResultElement.innerHTML = `${getFirstCharacter}${element}${getFirstCharacter}`
 }
 
-console.log(switchCharacter24("Swift"));
+switchCharacter24("Swift");
 
 
 
+// Exercise 25: Viết chương trình javascript để kiểm tra xem 1 số dương đã cho là bội số của 3 hay 7.
+
+const getExercise25Result = document.querySelector('.exercise25Result');
+
+const multipleCheck = function(element) {
+    if( element % 7 == 0 &&  element % 3 == 0) {
+        return getExercise25Result.innerHTML = `${element} given number is a multiple of 7 of 3`;
+    }else if (element % 7 == 0) {
+        return getExercise25Result.innerHTML = `${element} given number is a multiple of 7`;
+    } else if (element % 3 == 0) {
+        return getExercise25Result.innerHTML = `${element} given number is a multiple of 3`;
+    } else {
+        return getExercise25Result.innerHTML = `${element} given number is not a multiple of 3 or 7`;
+    };
+}
+
+multipleCheck(35);
 
 
+// Exercise 26: Viết chương trình javascript để tạo 1 chuỗi từ 1 chuỗi đã cho. 
+// Điều này được thực hiện bằng cách lấy 3 ký tự cuối cùng và thêm chúng vào cả phía trước cộng phía sau. 
+// Độ dài chuỗi phải từ 3 trở lên.
 
+const getExercise26Result = document.querySelector(".exercise26Result");
+
+const resultNewString26 = function (element) {
+   let getCharacter = element.slice(element.length-3, element.length)
+   return getExercise26Result.innerHTML = `${getCharacter}${element}${getCharacter}`;
+}
+
+resultNewString26("Swift")
+
+
+// Exercise 27: Viết chương trình javascript để kiểm tra xem 1 chuỗi có bắt đầu bằng "Java" hay không nếu ngược lại.
+
+const getExercise27Result = document.querySelector(".exercise27Result")
+
+
+const javaCharactersCheck = function(element) {
+     let checkJavaCharacters = element.slice(0,4);
+     if(checkJavaCharacters === "Java"){
+        return getExercise27Result.innerHTML = true;
+     }else {
+        return false;
+     }
+}
+
+javaCharactersCheck("JavaScript");
+
+// Exercise 28: Viết chương trình Javascript để kiểm tra xem ba giá trị số nguyên đã cho có nằm trong phạm vi 
+// 50 ~ 99(đã bao gồm) hay không. Trả về true nếu 1 trong số chúng nằm trong phạm vi.
+
+const getExercise28Result = document.querySelector(".exercise28Result");
+
+const checkIntegerNumber = function(a,b) {
+    if( 99 - a <= 49 || 99 - b <= 49 ) {
+       return getExercise28Result.innerHTML = true; 
+    } else {
+        return false;
+    }
+};
+
+checkIntegerNumber(1,50);
+
+// Exercise 29: Viết chương trình javascript để kiểm tra xem ba giá trị số nguyên đã cho có nằm trong phạm vi 50 ~ 99(Đã bao gồm).
+// trả về true nếu một hoặc nhiều trong số chúng nằm trong phạm vi đã chỉ định.
+
+const getExercise29Result = document.querySelector(".exercise29Result");
+
+const checkIntegerNumber29 = function(a,b,c) {
+    if((a <= 99 && a >= 50) || (b <= 99 && b >= 50) || (c <= 99 && c >= 50)) {
+        return getExercise29Result.innerHTML = true;
+    } else {
+        return getExercise29Result.innerHTML = false;
+
+    }
+}
+
+checkIntegerNumber29(1,2,3);
+
+// Exercise 30: Viết chương trình Javascript để kiểm tra xem một chuỗi "Script" có xuất hiện ở vị trí thứ 5 (index 4)
+// trong 1 chuỗi đã cho hay không. Nếu "Script" xuất hiện trong chuỗi, trả lại chuỗi không có "Script" nếu không trả lại chuỗi gốc.
+
+const getExercise30Result = document.querySelector('.exercise30Result');
+
+const checkScript = function(element) {
+    if ( element.length < 6) {
+        return getExercise30Result.innerHTML = element;
+    } else if (element.substring(10,4) == "Script") {
+        return getExercise30Result.innerHTML =  element.substring(4,10);
+    } else {
+        return getExercise30Result.innerHTML = element;
+    }
+}
+
+checkScript("javaScript");
+checkScript("coffeeScript");
+
+//console.log(checkScript("javaScript"));
+
+// Exercise 31: Viết chương trình Javascipt để tìm số lớn nhất trong ba số nguyên đã cho.
+
+const getExercise31Result = document.querySelector(".exercise31Result");
+
+const filterLargestNumber = function(a,b,c) {
+    if(a > b && a > c) {
+        return getExercise31Result.innerHTML = a;
+    }else if (b > a && b > c ) {
+        return getExercise31Result.innerHTML = b;
+    } else if(c > a && c > b) {
+        return getExercise31Result.innerHTML = c;
+    }
+}
+
+filterLargestNumber(5,9,7);
+
+// Exercise 32: Viết chương trình javaScript để tìm giá trị gần nhất với 100 từ hai giá trị số.
+
+const getExercise32Result = document.querySelector(".exercise32Result");
+
+const closestValue = function(a,b) {
+    if (Math.abs(100-a) < Math.abs(100 - b)) {
+        return getExercise32Result.innerHTML = a;
+    } else {
+        return getExercise32Result.innerHTML = b;
+    }
+
+}
+
+closestValue(500,170)
 
 
