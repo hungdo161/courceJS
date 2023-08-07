@@ -534,4 +534,44 @@ const closestValue = function(a,b) {
 
 closestValue(500,170)
 
+// Exercise 33: Viết chương trình javascript để kiểm tra xem hai số có nằm trong khoảng 40~60,
+// 70 ~ 100 hay không ? 
+
+const getExercise33Result = document.querySelector(".exercise33Result");
+
+
+const checkNumberRange = function (a,b) {
+    if((40 <= a && a <= 60) && ( 70 <= b && b <= 100)){
+        return getExercise33Result.innerHTML = true;
+    }else if ((40 <= b && b <= 60) && ( 70 <= a && a <= 100)) {
+        return getExercise33Result.innerHTML = true;
+    } else {
+        return getExercise33Result.innerHTML = false;
+    }
+};
+
+checkNumberRange(40,40)
+
+// Exercise 34: Viết chương trình javascript để tìm số lớn nhất trong hai số nguyên dương đã cho.
+// Hai số nằm trong khoảng 40 ~ 60.
+
+const getExercise34Result = document.querySelector(".exercise34Result");
+
+const checkLargestValue = function (a ,b) {
+    if ( (40 <= b && b <= 60) && (40 <= a && a <= 60) ) {
+        if( a > b) {
+            return getExercise34Result.innerHTML = `${a} meet the requirement.`;
+        } else if(a < b) {
+            return getExercise34Result.innerHTML = `${b} meet the requirement.`;
+        }else if (a == b) {
+            return getExercise34Result.innerHTML = `To numbers is equal.`;
+        }
+    } else{
+        return getExercise34Result.innerHTML = `${a} of ${b} do not meet the requirements.`;
+    }
+}
+
+checkLargestValue(40,50);
+
+
 
