@@ -574,4 +574,59 @@ const checkLargestValue = function (a ,b) {
 checkLargestValue(40,50);
 
 
+// Exercise 35: Viết chương trình kiểm tra xem 1 ký tự xác định có tồn tại giữa vị trí thứ 2 và thứ 4  
+// trong 1 chuỗi đã cho hay không ? 
+
+const getExercise35Result = document.querySelector(".exercise35Result");
+
+const checkChar = function (str1,char) {
+    ctr = 0;
+    for (let i = 0; i < str1.length; i++ ) {
+        if((str1.charAt(i) == char) && (i >= 1 && i <= 3)) {
+            ctr = 1;
+            break;
+        }
+    }
+    if (ctr == 1) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+
+// Exercise 36 : Viết chương trình javascript kiểm tra xem chữ số cuối của ba số nguyên dương có giống nhau hay không ? 
+
+const getExercise36Result = document.querySelector(".exercise36Result");
+
+const checkLastDigit = function(x, y, z){
+  if ((x > 0) && y > 0 && z > 0){
+    return (x % 10 == y % 10 && y % 10 == z % 10 && x % 10 == z% 10);
+   } else
+    return false;
+}
+
+
+// Exercise 37: Viết chương trình Javascript để tạo 1 chuỗi mới có 3 ký tự đầu tiên viết thường từ 1 chuỗi đã cho.
+// Nếu độ dài chuỗi nhỏ hơn 3, hãy chuyển đổi tất cả các ký tự thành chữ hoa.
+
+const getExercise37Result = document.querySelector (".exercise37Result");
+
+const upperAndLower = function(element) {
+    if(element.length <= 3) {
+        return getExercise37Result.innerHTML = element.toUpperCase();
+    } else {
+        frontPart = (element.substring(0,3)).toLowerCase();
+        lastPart = (element.substring(3,element.length));
+
+        return getExercise37Result.innerHTML = `${frontPart}${lastPart}`;
+    }
+}
+
+upperAndLower('HUNDO');
+
+
+
+
 
