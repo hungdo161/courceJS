@@ -626,6 +626,78 @@ const upperAndLower = function(element) {
 
 upperAndLower('HUNDO');
 
+// Exercise 38: Viết chương trình Javascript để kiểm tra tổng điểm của một học sinh trong các kỳ thi khác nhau.
+// Học sinh sẽ đạt A+ nếu tổng điểm nằm trong khoảng 89..100, nếu kỳ thi là "Thi cuối kỳ" thì học sinh phải đạt
+// A+ và tổng điểm phải lớn hơn hoặc bằng 90. Nếu học sinh được điểm A+, trả về true, Ngược lại trả về false.
+
+const getExercise38Result = document.querySelector(".exercise38Result");
+
+const examStatus = function(totMarks,isExaminations) {
+    if (isExaminations == "isExaminations") {
+        return totMarks >= 90;
+    } else {
+        return (totMarks >= 89 && totMarks <= 100)
+    }
+}
+
+getExercise38Result.innerHTML = examStatus(90,"isExaminations");
+
+// Exercise 39: Viết chương trình Javascript để tính tổng của 2 số nguyên đã cho. 
+// Nếu tổng nằm trong phạm vi 50..80 thì trả về 65 nếu không thì trả về 80.
+
+const getExercise39Result = document.querySelector(".exercise39Result");
+
+const checkTotalNumber = function (number1,number2) {
+    if((Number.isInteger(number1) == true) && (Number.isInteger(number2) == true)) {
+        if((number1 + number2 >= 50 ) && (number1 + number2 <= 80 ) ) {
+            return getExercise39Result.innerHTML = 65;
+        } else {
+            return getExercise39Result.innerHTML = 80;
+        }
+    } else {
+        return getExercise39Result.innerHTML = `not integer`;
+    }
+};
+
+checkTotalNumber(50,40);
+
+// Exercise 40: Viết chương trình javascript để kiểm tra từ 2 số nguyên đã cho xem một trong số chúng
+// là 8 hay tổng hoặc hiệu của chúng là 8. 
+
+const getExercise40Result = document.querySelector(".exercise40Result");
+
+const check8 = function (number1,number2) {
+    if((Number.isInteger(number1) == true) && (Number.isInteger(number2) == true)) {
+        if(number1 == 8 || number2 == 8 || number1 + number2 == 8 || number1 - number2 == 8 || number2 - number1 == 8) {
+            return getExercise40Result.innerHTML = true;
+        } else {
+            return getExercise40Result.innerHTML = false;
+        }
+    }
+}
+
+check8(2,6)
+
+// Exercise 41: Viết chương trình Javascript để kiểm tra bộ ba số;
+// Nếu ba số giống nhau trả về 30;
+// Ngược lại trả về 20;
+// Nếu hai số giống nhau trả về 40.
+
+const getExercise41Result = document.querySelector(".exercise41Result");
+
+const checkSameNumber = function (a,b,c) {
+    if(a == b && a == c) {
+        return getExercise41Result.innerHTML = 30;
+    } else if(a == b || a == c || b == c ) {
+        return getExercise41Result.innerHTML = 40;
+    } else {
+        return getExercise41Result.innerHTML = 20;
+    }
+}
+
+
+checkSameNumber(30,50,40)
+
 
 
 
