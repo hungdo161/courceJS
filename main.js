@@ -699,6 +699,100 @@ const checkSameNumber = function (a,b,c) {
 checkSameNumber(30,50,40)
 
 
+// Exercise 42: Viết chương trình Javascript để kiểm tra xem ba số đã cho đang tăng theo chế độ nghiêm ngặt (Strict mode) 
+// hay chế độ mềm (soft mode). 
+// Note: Chế độ strict mode: 10,15,31. Chế độ soft mode: 24,22,31 hoặc 22,22,31.
+
+const getExercise42Result = document.querySelector(".exercise42Result");
+
+const checkMode = function(a,b,c) {
+    if (a < b && b < c) {
+        return getExercise42Result.innerHTML = `Three given numbers increasing in strict mode`;
+    } else if ((a >= b && a < c)) {
+        return getExercise42Result.innerHTML = `Three given numbers increasing in soft mode`;
+    } else {
+        return getExercise42Result.innerHTML = `Three given numbers increasing in irregular mode`;
+    }
+}
+
+checkMode(2,2,3);
+
+// Exercise 43: Viết chương trình Javascript để kiểm tra trong ba số nguyên đã cho(Số nguyên không âm)
+// xem có hai hoặc tất cả các số đó có có chữ số ngoài cùng bên phải giống nhau không.
+
+
+const getExercise43Result = document.querySelector(".exercise43Result");
+
+const checkLastDigit43 = function(a,b,c) {
+    if (Number.isInteger(a) == true && Number.isInteger(b) == true && Number.isInteger(c) == true) {
+       if((a % 10 === b % 10) ||( a % 10 === c % 10) ) {
+        return getExercise43Result.innerHTML = `Given three numbers are the two or all numbers same rightmost digit.`;
+       } else {
+        return getExercise43Result.innerHTML = `Given three numbers are not the same rightmost digit.`;
+       }
+    } else {
+        return getExercise43Result.innerHTML = `Given three numbers are not intergers.`;
+    }
+}
+
+checkLastDigit43(25,2223,22222);
+
+// Exercise 44: Viết chương trình Javascript để kiểm tra xem trong ba số nguyên đã cho, một số có lớn hơn hoặc bằng 20 hay không. 
+// Nó có nhỏ hơn các số còn lại hay không. 
+
+const getExercise44Result = document.querySelector(".exercise44Result");
+
+const checkGreaterCondition = function(a,b,c) {
+    if((a >= 20 || b >= 20 || c >= 20) && (Number.isInteger(a) == true && Number.isInteger(b) == true && Number.isInteger(c) == true)) {
+        if((a >= 20) && (a < b || a < c) || (b >= 20) && (b < a || b < c) || (c >= 20) && (c < b || c < a) ) {
+        return getExercise44Result.innerHTML = `Three integers given is eligible.`
+        }
+    } else {
+        return getExercise44Result.innerHTML = `Three integers given is not eligible. `
+    }
+}
+
+checkGreaterCondition(20,80,10);
+
+// Exercise 45: Viết chương trình Javascript kiểm tra hai giá trị số nguyên và trả về true nếu một trong hai giá trị này là 15
+// hoặc nếu tổng hoặc hiệu của chúng là 15.
+
+const getExercise45Result = document.querySelector(".exercise45Result");
+
+const checktwoNumbers45 = function (number1,number2) {
+    if((Number.isInteger(number1) == true && Number.isInteger(number2) == true) 
+    && (number1 == 15 || number2 == 15 || Math.abs(number1 - number2) == 15 || number1 + number2 == 15)) {
+        return getExercise45Result.innerHTML = `Two numbers given is eligible.`
+    } else {
+        return getExercise45Result.innerHTML = `Two numbers given is not eligible.`
+    }
+}; 
+
+checktwoNumbers45( 1,16);
+
+
+
+// Exercise 46: Viết chương trình Javascript để kiểm tra hai số nguyên không âm đã cho nếu một(không phải cả hai) 
+// là bội số của 7 hoặc 11.
+
+const getExercise46Result = document.querySelector(".exercise46Result");
+
+const checkMultupleNumber = function(number1,number2) {
+    if((Number.isInteger(number1) == true) && (Number.isInteger(number2) == true)) {
+        if(( (number1 % 7 == 0 && number2 % 7 == 0) 
+         || (number1% 11 == 0 && number2 % 11 == 0))
+         ) {
+            return  `Two given numbers is multiple of 7 or 11(bold).`;
+        }else if((number1 % 7 == 0 || number2 % 7 == 0 || number1 % 11 == 0 && number2 % 11 == 0)) {
+            return getExercise46Result.innerHTML = `Two given numbers is multiple of 7 or 11(not bold).`;
+        } 
+    } else {
+        return false;
+    }
+};
+
+checkMultupleNumber(14,14)
+
 
 
 
