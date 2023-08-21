@@ -779,11 +779,9 @@ const getExercise46Result = document.querySelector(".exercise46Result");
 
 const checkMultupleNumber = function(number1,number2) {
     if((Number.isInteger(number1) == true) && (Number.isInteger(number2) == true)) {
-        if(( (number1 % 7 == 0 && number2 % 7 == 0) 
-         || (number1% 11 == 0 && number2 % 11 == 0))
-         ) {
-            return  `Two given numbers is multiple of 7 or 11(bold).`;
-        }else if((number1 % 7 == 0 || number2 % 7 == 0 || number1 % 11 == 0 && number2 % 11 == 0)) {
+        if((number1 % 7 == 0 && number2 % 7 ==0) || (number1 % 11 == 0 && number2 % 11 == 0) ) {
+            return getExercise46Result.innerHTML = `Two given numbers is multiple of 7 or 11(bold) -> false.`;
+        }else if((number1 % 7 == 0 || number2 % 7 == 0 || number1 % 11 == 0 || number2 % 11 == 0)) {
             return getExercise46Result.innerHTML = `Two given numbers is multiple of 7 or 11(not bold).`;
         } 
     } else {
@@ -791,8 +789,141 @@ const checkMultupleNumber = function(number1,number2) {
     }
 };
 
-checkMultupleNumber(14,14)
+checkMultupleNumber(33,16);
 
+// Exersice 47: Viết chương trình Javascript để kiểm tra xem 1 số đã cho có tồn tại trong phạm vi 40..10000 hay không.
+// VD 40 trình bày trong 40 và 4000.
+
+const getExercise47Result = document.querySelector(".exercise47Result");
+
+const checkRangeNumber = function(number) {
+    if(number >= 40 && number <= 10000) {
+        return getExercise47Result.innerHTML = `The given number exists in the range 40..10000.`
+    } else {
+        return  getExercise47Result.innerHTML = `The given number not exists in the range 40..1000. -> false.`;
+    }
+};
+
+checkRangeNumber(100);
+
+// Exercise 48: Viết chương trình Javascript để đảo ngược 1 chuỗi đã cho.
+
+const getExercise48Result = document.querySelector(".exercise48Result");
+
+const reverseImplement = function (s) {
+    var o = [];
+    for (var i = s.length - 1, j = 0; i >= 0; i--, j++)
+      o[j] = s[i];
+    return getExercise48Result.innerHTML = o.join('');
+  }
+
+reverseImplement("DoNgocHung");
+
+// Exercise 49: Viết chương trình Javascript để thay thế mọi ký tự trong một chuỗi đã cho
+// bằng ký tự theo sau nó trong bảng chữ cái.
+
+function letterChanges(text) {
+    let s = text.split('');
+    for(let i = 0; i < s.length ; i++ ) {
+        switch (s[i]) {
+            case " ":
+            break;
+            case "z":
+            s[i] = "a";
+            break;
+            case "Z":
+            s[i] = "A";
+            break;
+            default:
+            s[i] = String.fromCharCode(1 + s[i].charCodeAt(0));
+        }
+        switch(s[i]) {
+            case "a" : case "e": case "i" : case "o" : case "u":
+                s[i] = s[i].toUpperCase();
+        }
+    }
+    return s.join("");
+}
+
+letterChanges("PYTHON");
+letterChanges("W3R");
+letterChanges("php");
+
+
+// Exercise 50: Viết chương trình Javascript để viết hoa chữ cái đầu tiên của mỗi từ trong 1 chuỗi đã cho.
+
+const getExercise50Result = document.querySelector(".exercise50Result");
+
+const firstLetterToUpperCase = function (string) {
+    string = string.split(" "); // method split lấy ra từng từ trong 1 đoạn văn thông qua 1 điểm chung.
+
+    for(let i = 0; i < string.length; i++ ) {
+        string[i] = string[i][0].toUpperCase() + string[i].substr(1);
+    }
+    return getExercise50Result.innerHTML = string.join(" ");
+};
+
+firstLetterToUpperCase("do ngoc hung");
+firstLetterToUpperCase("thach thi hong");
+firstLetterToUpperCase("write a javascript program to capitalize the first letter of each word of given string.")
+
+// Exercise 51: Viết chương trình javascript để chuyển đổi 1 số đã cho thành giờ và phút.
+
+const getExercise51Result = document.querySelector(".exercise51Result");
+
+const convertToTime = function(number) {
+    
+    if(Number.isInteger(number) == true) {
+        let hour = Math.floor(number / 60);
+        let minutes = number%60; 
+            if(hour >= 24) {
+                let _hour = hour % 24;
+                return getExercise51Result.innerHTML = `${_hour}:${minutes}.`;
+            } else {
+                return getExercise51Result.innerHTML = `${hour}:${minutes}.`;
+            }
+    }
+}
+
+convertToTime(14000);
+
+// Exercise 52: Viết chương trình Javascript để chuyển đổi chữ cái của 1 chuỗi đã cho theo thứ tự bảng chữ cái.
+
+const getExercise52Result = document.querySelector(".Exercise52Result");
+
+const alphabetSoup = function(String) {
+    let newString = String.split("").sort().join(""); //Method sort mặc định sort theo alphabet.
+    return getExercise52Result.innerHTML = newString;
+}
+
+alphabetSoup("Dongochung");
+
+// Exercise 53: Viết chương trình javascript để kiểm tra xem các ký tự a và b có được phân tách chính xác bằng 3 đơn vị chữ
+// bất kỳ đâu (ít nhất 1 lần) trong 1 chuỗi đã cho hay không.
+
+const getExercise53Result = document.querySelector(".exercise53Result");
+
+const LettersPlaceCheck = function (string) {
+    // let stringLetters = string.split("");
+    let aPlace = string.search("a");
+    let bPlace = string.search("b");
+    if (Math.abs(aPlace - bPlace) >= 3) {
+        return getExercise53Result.innerHTML = `The character a and b are spearated by exactly 3 places anywhere.`
+    } else {
+        return getExercise53Result.innerHTML = `The character a and b are spearated by not 3 places anywhere -> false.`
+
+    }
+}
+
+LettersPlaceCheck("abcheck");
+
+// Exercise 54: Viết chương trình Javascript đếm số chữ nguyên âm trong 1 chuỗi cho trước.
+
+const getExercise54Result = document.querySelector(".exercise54Result");
+
+const vowelCount = function (string) {
+    
+}
 
 
 
