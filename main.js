@@ -922,8 +922,61 @@ LettersPlaceCheck("abcheck");
 const getExercise54Result = document.querySelector(".exercise54Result");
 
 const vowelCount = function (string) {
-    
+    let vowelsCount = 0;
+    // turn the input into a string.
+    let toString = string.toString();
+    //loop through the string.
+    for(let i = 0; i <= string.length - 1; i++  ) {
+        if (toString.charAt(i) == "a" || toString.charAt(i) == "e" || toString.charAt(i) == "i" || toString.charAt(i) == "o" || toString.charAt(i) == "u" ) {
+            vowelsCount += 1;
+        }
+    }
+    return getExercise54Result.innerHTML = vowelsCount;
 }
+
+vowelCount("iiiii")
+
+
+// Exercise 55: Viết chương trình Javascript để kiểm tra xem 1 chuỗi đã cho có
+// chứa ố p và t bằng nhau hay không ? 
+
+const getExercise55Result = document.querySelector(".exercise55Result");
+
+const checkEqual = function(string) {
+    let stringP = 0;
+    let stringT = 0;
+    let toString = string.toString();
+    for (let i = 0; i <= toString.length -1 ; i ++) {
+        if (toString.charAt(i) == "p") {
+            stringP += 1;
+        } else if (toString.charAt(i) == "t") {
+            stringT += 1;
+        }
+    }
+    return getExercise55Result.innerHTML = (stringP == stringT);
+}
+
+checkEqual("paattpss")
+
+// Exercise 56: Viết chương trình Javascript để chia 2 số dương và trả về dưới dạng string có dấu phẩy
+// được định dạng đúng.
+
+const getExercise56Result = document.querySelector(".exercise56Result");
+
+const divideNumbers = function(number1, number2) {
+    output = (number1/number2).toString();
+    result_array = output.split(".")
+    return getExercise56Result.innerHTML = result_array;
+}
+
+divideNumbers(13,5);
+
+// Exercise 57: Viết chương trình Javascript để tạo 1 chuỗi gồm các bản sao được chỉ định(Số dương)
+// của 1 chuỗi đã cho.
+
+const getExercise57Result  = document.querySelector(".exercise57Result");
+
+console.log(getExercise57Result)
 
 
 
