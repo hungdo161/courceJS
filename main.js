@@ -976,7 +976,61 @@ divideNumbers(13,5);
 
 const getExercise57Result  = document.querySelector(".exercise57Result");
 
-console.log(getExercise57Result)
+const copiesString = function(string,number) {
+   if(n <= 0) {
+    return false;
+   } else {
+       return getExercise57Result.innerHTML =  string.repeat(number);
+   }
+}
+
+copiesString("abc",2)
+
+// Exercise 58: Viết chương trình Javascript để tạo 1 chuỗi cập nhật 
+// gồm 4 bản sao của 3 ký tự cuối cùng của chuỗi gốc đã cho.
+// Độ dài của chuỗi phải từ 3 trở lên. 
+
+const getExercise58Result = document.querySelector('.exercise58Result');
+
+const updateString = function(string) {
+    if(string.length < 3 ) {
+        return getExercise58Result.innerHTML = `<i>String is too shoot</i>`;
+    } else {
+       let last3Character = string.slice(-3);
+       return getExercise58Result.innerHTML = `<i>${string}${last3Character}${last3Character}${last3Character}</i>`;
+    }
+}
+
+updateString("Do Ngoc Hung");
+
+// Exercise 59: Viết chương trình Javascript để trích xuất nửa đầu của chuỗi chẵn đã cho. 
+
+const getExercise59Result = document.querySelector(".exercise59Result");
+
+const extractHalf = function(string) {
+    if (string.length % 2 !== 0) {
+        return getExercise59Result.innerHTML = `<i>Given string not even.</i>`;
+    } else {
+        let getHalfString = string.slice(0,string.length/2);
+        return getExercise59Result.innerHTML = `<i>${getHalfString}</i>`
+    }
+}
+
+extractHalf("dongochung1");
+
+// Exercise 60: Viết chương trình javascript để tạo 1 chuỗi mới không có ký tự đầu tiên và cuối cùng của chuỗi đã cho.
+
+const getExercise60Result = document.querySelector(".exercise60Result");
+
+const newString60 = function(string) {
+    if(string.length <= 1) {
+        return getExercise60Result.innerHTML = `<i>Given string is not eligible.</i>`
+    }else {
+        let output = string.slice(1,-1);
+        return getExercise60Result.innerHTML = `<i>${output}</i>`;
+    } 
+}
 
 
+newString60("hhungg");
 
