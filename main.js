@@ -1034,3 +1034,70 @@ const newString60 = function(string) {
 
 newString60("hhungg");
 
+// Exercise 61: Viết chương trình Javascript để nối 2 chuỗi ngoại
+// trừ ký tự đầu tiên của chúng.
+
+const getExercise61Result = document.querySelector(".exercise61Result");
+
+const concatStrings = function(string1, string2) {
+    let newString1 = string1.slice(0,-1);
+    let newString2 = string2.slice(1);
+    return getExercise61Result.innerHTML = `${newString1}-${newString2}`
+}
+
+concatStrings("string1","String2")
+
+// Exercise 62: 
+
+const getExercise62Result = document.querySelector(".exercise62Result");
+
+const moveCharacters62 = function (string1,string2) {
+    let newString1 = string1.slice(string1.length-3,string1.length);
+
+    return getExercise62Result.innerHTML = `${newString1}${string2}`;
+};
+
+moveCharacters62("string1","string2");
+
+// Exercise 63: Viêt chương trình Javascript để tạo 1 chuỗi sử dụng 3 ký tự của 1 chuỗi
+// có độ dài lẻ cho trước. Độ dài của chuỗi phải lớn hơn hoặc bằng 3. 
+
+const getExercise63Result = document.querySelector(".exercise63Result");
+
+const newMiddeString63 = function(string) {
+    if (string.length >= 3 && string.length % 2 != 0) {
+       let output = string.slice(string.length/2 - 1,string.length/2+2)
+       return getExercise63Result.innerHTML  = output;
+    } else {
+        return getExercise63Result.innerHTML = `<i>Given string is not ineligible</i>.`
+    }
+}
+
+newMiddeString63("Thach thi Hong1")
+
+//Exercise 64: Viết chương trình Javascript để nối hai chuỗi lại với nhau và trả về kết quả.
+// nếu độ dài của 2 chuỗi không khớp với nhau thì hãy xoá ký tự khỏi chuỗi dài hơn.
+
+const getExercise64Result = document.querySelector(".exercise64Result");
+
+const concatStrings64 = function(string1,string2) {
+    if(string1.length == string2.length) {
+        return getExercise64Result.innerHTML = `${string1}${string2}`;
+    } else if(string1.length >= string2.length) {
+        let lengthDiff = string1.length - string2.length;
+        let newString1 = string1.slice(string1.length -lengthDiff)
+    return getExercise64Result.innerHTML = `${newString1}${string2}`;
+        
+    }
+    else if (string2.length >= string1.length) {
+        let lengthDiff2 = string2.length - string1.length;
+        let newString2 = string2.slice(string2.length -lengthDiff2)
+    return getExercise64Result.innerHTML = `${string1}${newString2}`;
+    }
+}
+
+concatStrings64("do ngoc hung1","do ngoc hung2 thach thi hong");
+
+
+
+
