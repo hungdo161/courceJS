@@ -1085,19 +1085,185 @@ const concatStrings64 = function(string1,string2) {
         return getExercise64Result.innerHTML = `${string1}${string2}`;
     } else if(string1.length >= string2.length) {
         let lengthDiff = string1.length - string2.length;
-        let newString1 = string1.slice(string1.length -lengthDiff)
-    return getExercise64Result.innerHTML = `${newString1}${string2}`;
+        let newString1 = string1.slice(0,string1.length -lengthDiff)
+    return getExercise64Result.innerHTML = `<i>${newString1}${string2}</i>`;
         
     }
     else if (string2.length >= string1.length) {
         let lengthDiff2 = string2.length - string1.length;
-        let newString2 = string2.slice(string2.length -lengthDiff2)
-    return getExercise64Result.innerHTML = `${string1}${newString2}`;
+        let newString2 = string2.slice(0,string2.length -lengthDiff2)
+    return getExercise64Result.innerHTML = `<i>${string1}${newString2}</i>`;
     }
 }
 
 concatStrings64("do ngoc hung1","do ngoc hung2 thach thi hong");
 
+// Exercise 65: Viết chương trình Javascript để kiểm tra xem 1 chuỗi có kết thúc băngf "Script" hay không.
+// Độ dài chuỗi phải lớn hơn hoặc bằng 6.
+
+const getExercise65Result = document.querySelector(".exercise65Result");
+
+const checkStringScript = function(element) {
+    if(element.length >= 6) {
+        let last6Characters = element.slice(element.length -6,element.length)
+        if (last6Characters == "Script"){
+            return getExercise65Result.innerHTML = `<i>The given string ends with "Script".</i>`;
+        }else {
+        return getExercise65Result.innerHTML = `<i>Given string not ineligible.</i>`;
+        }
+    } else {
+        return getExercise65Result.innerHTML = `<i>Given string has an ineligible length.</i>`;
+    }
+}
+checkStringScript("typeScrip")
+
+// Exercise 66: Viết Chương trình Javascript để hiển thị tên thành phố nếu chuỗi đó bắt đầu bằng 
+// "Los" or "New" nếu không thì trả về trống(blank).
+
+const getExercise66Result = document.querySelector(".exercise66Result");
+
+const checkCityCharacters = function (city) {
+    if (city.length < 3) {
+        return getExercise66Result.innerHTML = `<i>The given string has an ineligible length.</i>`
+    } else {
+        let threeFirstcharacters = city.slice(0,3);
+        if(threeFirstcharacters == "New" || threeFirstcharacters == "Los") {
+            return getExercise66Result.innerHTML = `<h4>${city}</h4>`;
+        } else {
+          return  getExercise66Result.innerHTML = ` `;
+        }
+    }
+}
+
+checkCityCharacters("LosAngeles");
+
+// Exercise 67: Viết chương trình javaScript để tạo một chuỗi mới từ 1 chuỗi đã cho. Chương trình này loại bỏ ký tự đầu tiên
+// và cuối cùng của chuỗi nếu ký tự đầu tiên hoặc cuối cùng là "P". Trả về chuỗi gốc nếu điều kiện không được thoả mãn.
+
+const getExercise67Result = document.querySelector(".exercise67Result");
+
+const exercise67Result = function (string) {
+    let firstCharacter = string.slice(0,1);
+    let lastCharacter = string.slice(-1);
+    if(firstCharacter == "P" && lastCharacter == "P") {
+        let newCharacter = string.slice(1,string.length - 1);
+        return getExercise67Result.innerHTML = `<i>${newCharacter}</i>`
+    }else if(firstCharacter == "P") {
+       let newCharacter = string.slice(1,string.length);
+       return getExercise67Result.innerHTML = `<i>${newCharacter}</i>`
+    }else if (lastCharacter == "P") {
+        let newCharacter =  string.slice(0,string.length -1);
+        return getExercise67Result.innerHTML = `<i>${newCharacter}</i>`
+    } else {
+        return getExercise67Result.innerHTML = `<i>${string}</i>`
+    }
+}
+
+exercise67Result("string")
+
+// Exercise 68: Viết chương trình Javascript để tạo 1 chuỗi mới sử dụng n ký tự đầu tiên và cuối cùng
+// của 1 chuỗi nhất định. Độ dài của chuỗi phải lớn hơn hoặc bằng n.
+
+const getExercise68Result = document.querySelector(".exercise68Result");
+
+const useNumberCharacterString = function(string,number) {
+    if ( string.length < number ) {
+        return getExercise68Result.innerHTML = `<i>The given String not ineligible.</i>`
+    } else {
+        let firstPart = string.slice(0,number);
+        let lastPart = string.slice(string.length - number,string.length);
+        return getExercise68Result.innerHTML = `<i>${firstPart}${lastPart}</i>`;
+    }
+};
+
+useNumberCharacterString("Javascript",6)
+
+//Exercise 69: Viết chương trình javascript để tính tổng 3 phần từ của 1 mảng số nguyên có độ dài bằng 3 cho trước.
+
+const getExercise69Result = document.querySelector(".exercise69Result");
+
+const totalIntegersExercise69 = function (number) {
+        return getExercise69Result.innerHTML = `Total: ${number[0] + number[1] + number[2]}`;
+} 
+
+totalIntegersExercise69([5,6,7])
+
+// Exercise 70: Viết chương trình Javascript để xoay các phần tử còn lại trong 1 mảng các số nguyên
+// có độ dài 3 cho trước.
+
+const getExercise70Result = document.querySelector(".exercise70Result");
+
+const rotateLeftExercise70 = function(number) {
+    return getExercise70Result.innerHTML = `Output: ${number[1]},${number[2]},${number[0]}`;
+}
+
+rotateLeftExercise70([7,6,5]);
 
 
+// Exercise 71: Viết chương trình Javascript để kiểm tra xem số 1 xuất hiện ở vị trí đầu tiên
+// hay cuối cùng của 1 mảng số nguyên nhất định. Độ dài của mảng phải lớn hơn hoặc bằng 1.
 
+const getExercise71Result = document.querySelector(".exercise71Result");
+
+const checkNumber1Position = function (array) {
+    if(array.length < 1) {
+        return getExercise71Result.innerHTML = `The given array does not astisfy the condition.`;
+    } else {
+       let message = (array[0] == 1 || array[array.length-1] == 1) ? true : false;
+       if(message == true) {
+        return getExercise71Result.innerHTML = `<i>The given array satisfies the condition.</i>`
+       }else {
+        return getExercise71Result.innerHTML = `<i>The given array does not astisfy the condition.</i>`;
+       }
+    }
+
+};
+
+checkNumber1Position([0,3,4,4,1]);
+
+// Exercise 72: Viết chương trình Javascript để kiểm tra xem phần từ đầu tiên và phần tử cuối cùng
+// có giống nhau trong 1 mảng sô nguyên có độ dài bằng 3 cho trước không.
+
+const getExercise72Result = document.querySelector(".exercise72Result");
+
+const checkSameExercise72 = function(array) {
+    if (array[0] == array[array.length-1]) {
+        return getExercise72Result.innerHTML = `<i>The ginven array with first and last elements are the same.</i>`
+    } else {
+        return getExercise72Result.innerHTML = `<i>The given array does not astisfy the condition.</i>`
+    }
+}
+
+checkSameExercise72([1,2,0])
+
+// Exercise 73: Viết chương trình javascript để đảo ngược các phần tử của 1 mảng số nguyên có độ dài là 3.
+
+const getExercise73Result = document.querySelector(".exercise73Result");
+
+const reverseArray73 = function(array) {
+    if(array.length == 3) {
+        return getExercise73Result.innerHTML = `${array[2]},${array[1]},${array[0]}`
+    } else {
+        return false
+    }
+}
+
+reverseArray73([4,5,6])
+
+// Exercise 74: Viết chương trình Javascript để tìm giá trị lớn nhất giữa phần tử đầu tiên
+// và phần tử cuối cùng và đặt tất cả các phần tử khác thành giá trị đó. Hiển thị mảng được cập nhật.
+
+const getExercise74Result = document.querySelector(".exercise74Result");
+
+const changeAllMaxValue = function (array) {
+    let arrayLength = array.length;
+    if(arrayLength >= 2) {
+        let maxValue = array[0] > array[arrayLength - 1 ] ? array[0] : array[arrayLength - 1];
+        array[0] = maxValue; 
+        array[1] = maxValue;
+        array[2] = maxValue;
+        return getExercise74Result.innerHTML = array
+    }
+}
+
+changeAllMaxValue([40,30,20])
