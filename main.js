@@ -1267,3 +1267,218 @@ const changeAllMaxValue = function (array) {
 }
 
 changeAllMaxValue([40,30,20])
+
+// Exercise 75: Viết chương trình JavaScript để tạo 1 mảng lấy các phần tử ở giữa của 2 mảng số nguyên và mỗi mảng có độ dài bằng 3.
+
+const getExercise75Result = document.querySelector(".exercise75Result");
+
+const newMiddelArray = function(array1,array2) {
+    if(array1.length % 2 == 1 && array2.length % 2 == 1) {
+        let result = [];
+       let getIndex1 = Math.floor(array1.length/2);
+       let getIndex2 = Math.floor(array2.length/2);
+       result.push(array1[getIndex1],array2[getIndex2])
+       return getExercise75Result.innerHTML = result;
+    } else {
+        return getExercise75Result.innerHTMl = `The givens array is not eligible.`
+    }
+}
+newMiddelArray([1,2,3,4,5],[1,2,3,4,5,6,7])
+
+// Exercise 76: Viết chương trình Javascript để tạo 1 mảng bằng cách lấy phần từ đầu tiên và cuối 
+// cùng từ 1 mảng số nguyên cho trước. Độ dài của mảng phải lớn hơn hoặc bằng 1.
+
+const getExercise76Result = document.querySelector(".exercise76Result");
+
+const newArray76 = function(array) {
+    let arrayLength = array.length;
+    if(arrayLength < 1) {
+        return getExercise76Result.innerHTML = `<i>The givens array is not eligible.</i>`
+    } else {
+        let output = [];
+        let getFirstElement = array[0];
+        let getLastElement = array[arrayLength-1];
+        output.push(getFirstElement, getLastElement)
+        return getExercise76Result.innerHTML = `<i>${output}</i>`;
+    }
+}
+
+newArray76([0,1,2,3,4])
+
+// Exercise 77: Viết chương trình Javascript để kiểm tra xem 1 mảng số nguyên có độ dài chứa 1 hay 3.
+
+const getExercise77Result = document.querySelector(".exercise77Result");
+
+const checkOneAndThreeTrue = function(array) {
+    if(array.indexOf(1) != -1 || array.indexOf(3) != -1) {
+        return getExercise77Result.innerHTML = true
+    } else {
+        return getExercise77Result.innerHTML = false
+
+    }
+}
+
+checkOneAndThreeTrue([0,3])
+
+// Exercise 78: Viết chương trình Javascript để kiểm tra xem 1 mảng số nguyên có độ dài là 2 không chứa 1 hoặc 3.
+
+const getExercise78Result = document.querySelector(".exercise78Result");
+
+const checkOneAndThreeFalse = function(array) {
+    if(array.indexOf(1) == -1 && array.indexOf(3) == -1) {
+        return getExercise78Result.innerHTML = true;
+    } else {
+        return getExercise78Result.innerHTML = false;
+    }
+}
+checkOneAndThreeFalse([1,2])
+
+// Exercise 79: Viết chương trình Javascript để kiểm tra xem một mảng số nguyên cho trước có chứa 30,40 hai lần hay không.
+// Độ dài của mảng nên là 0,1 hoặc 2.
+
+const getExercise79Result = document.querySelector(".exercise79Result");
+
+const checkTwiceIntegers = function(array) {
+    if ((array[0] == 30 && array[1] == 30) || (array[0] == 40 && array[1] == 40))  {
+        return getExercise79Result.innerHTML = `<i>True</i>`
+    } else {
+        return getExercise79Result.innerHTML = `<i>False</i>`
+    }
+}
+
+checkTwiceIntegers([30,30])
+
+// Exercise 80: Viêt chương trình Javascript để hoán đổi phần từ đầu tiên và cuối cùng của một mảng số nguyên cho trước.
+// Độ dài của mảng tối thiểu phải bằng 1.
+
+const getExercise80Result = document.querySelector(".exercise80Result"); 
+
+const swaptArrayResult = function(array) {
+    let arrayLength = array.length;
+    if (arrayLength <= 1) {
+        getExercise80Result.innerHTML = `False`;
+    } else {
+        [array[0],array[arrayLength - 1]] = [array[arrayLength -1],array[0]]
+        return  getExercise80Result.innerHTML = array;
+    }
+}
+
+swaptArrayResult([10,1,5,6,7])
+
+// Exercise 81: Viết chương trình Javascript để cộng 2 chữ số vào một số nguyên dương có độ dài bằng 2 cho trước.
+
+const getExercise81Result = document.querySelector(".exercise81Result");
+
+// const totalNumber81 = function (array,preNumber) {
+//     return getExercise81Result.innerHTML = `<i>Result:</i> ${array[0] + array[1] + preNumber}`;
+// } 
+
+// totalNumber81([5,10],20);
+
+const totalNumber81 = function (number) {
+    let NumberToString = number.toString();
+    let numberLength = NumberToString.length;
+    if(numberLength == 2) {
+        let firstValue = Math.floor(number/10);
+        let lastValue = number%10;
+        return getExercise81Result.innerHTML = `<i>output:</i> ${firstValue} + ${lastValue} = ${firstValue + lastValue}`;
+    } else {
+        return getExercise81Result.innerHTML = `Flase.`;
+    }
+}
+
+totalNumber81(99)
+
+// Exercise 82: Viết chương trình Javascript để cộng hai số nguyên dương theo từng thành phần 1, 
+// Nếu giá trị >= 10 thì sẽ chỉ lấy vế sau. 
+
+const getExercise82Result = document.querySelector(".exercise82Result");
+
+const addTwoIntegersWithOutCarrying = function(number1,number2) {
+    let result = 0;
+    i =1;
+    while(number1 > 0 && number2 >0 ) {
+        result += i*((number1 + number2)%10)
+        number1 = Math.floor(number1/10);
+        number2 = Math.floor(number2/10);
+        i *= 10;
+    }
+    return getExercise82Result.innerHTML = result;
+}
+
+addTwoIntegersWithOutCarrying(193,914)
+
+// Exercise 83: Viết chương trình Javascript để tìm chuỗi dài nhất từ 1 mảng chuỗi cho trước.
+
+const Course = [
+    "javascript",
+    "java",
+    "next.JS",
+    "React.JS",
+    "Javascript + HTML,CSS"
+]
+
+const getExercise83Result = document.querySelector(".exercise83Result");
+
+const theLongestString = function(array) {
+    array.reduce(function(string1,string2) {
+        let string1Length = string1.length;
+        let string2Length = string2.length;
+       return output = string1Length > string2Length ? string1 : string2;
+    })
+    return getExercise83Result.innerHTML =`The longest string: ${output}`;
+} 
+
+theLongestString(Course)
+
+// Exercise 84: Viết chương trình Javascript để thay thế từng ký tự trong một chuỗi nhất định bằng ký tự tiếp theo trong bảng chữ cái alphabet.
+// Note: "a" sẽ được thay thế bằng "b" hoặc "z" sẽ được thay thế bằng "a";
+
+const getExercise84Result = document.querySelector(".exercise84Result");
+
+// Note: Đề bài này tương tự với exercise 49 nên có thể tận dụng function đó được. 
+
+const TheGivenString = "Javascript";
+
+getExercise84Result.innerHTML = letterChanges(TheGivenString);
+
+// Exercise 85: Viết chương trình Javascript để chia một mảng số nguyên dương cho trước thành 2 phần.
+// Phần thứ nhất thuộc về phần thứ nhất, phần thứ 2 thuộc về phần thứ 2 và phần tử thứ 3 thuộc về phần thứ nhất.. vv, 
+// cuối cùng hãy tính tổng của 2 phần lại và lưu nó vào 1 mảng có kích thước là 2 phần tử. 
+
+const getExercise85Result = document.querySelector(".exercise85Result");
+
+const arrayNumber = [0,9,6,8,9,1,8,7,9,4];
+
+
+
+const divideArray = function (array) {
+    let arrayLength = array.length;
+    let resultArray = [0,0];
+
+    for(let i = 0; i < arrayLength ; i++) {
+        if(i % 2 == 0) {
+            resultArray[0] += array[i];
+        } else {
+            resultArray[1] += array[i]; 
+        }
+    }
+    return getExercise85Result.innerHTML = `Output: ${resultArray}`;
+};
+
+divideArray(arrayNumber);
+
+console.log(divideArray(arrayNumber));
+
+
+
+
+
+
+
+
+
+
+
+
+
