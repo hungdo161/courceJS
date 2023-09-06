@@ -1468,8 +1468,53 @@ const divideArray = function (array) {
 
 divideArray(arrayNumber);
 
-console.log(divideArray(arrayNumber));
 
+
+// Exercise 86: Viết chương trình Javascript để tìm các loại góc cho trước: 
+// Các loại góc :
+// - Góc nhọn: Từ 0 đến 90 độ.
+// - Góc vuông: 1 góc 90 độ.
+// - Góc tù: Góc từ 90 - 180 độ.
+// - Góc thẳng: Góc 180 độ.
+
+const getExercise86Result = document.querySelector(".exercise86Result");
+
+const checkAngle = function(degree) {
+    if(degree > 0 && degree < 90) {
+      return  getExercise86Result.innerHTML = `This given angle is acute angle.`;
+    } else if (degree == 90) {
+        return getExercise86Result.innerHTML = `This given angle is right angle.`;
+    } else if (degree > 90 && degree < 180) {
+        return getExercise86Result.innerHTML = `This given angle is obuse angle.`;
+    }else if (degree == 180) {
+        return getExercise86Result.innerHTML = `This given angle is straight angle.`;
+    }
+}
+
+checkAngle(180)
+
+// Exercise 87: Viết chương trình Javascript để xác định xem hai mảng số nguyên có cùng độ dài có giống nhau hay không.
+// Các mảng sẽ tương tự nhau nếu 1 mảng có thể được lấy từ một mảng khác bằng cách hoán đổi tối đa 1 cặp phần tử. 
+
+const getExercise87Result = document.querySelector(".exercise87Result");
+
+const checkArraySimilar = function (array1, array2) {
+    // get characters length
+    array1String = array1.toString();
+    array2String = array2.toString();
+
+    if(array1String === array2String) {
+        return getExercise87Result.innerHTML =  true; 
+    } else {
+        return getExercise87Result.innerHTML =  false; 
+    }
+
+}
+
+checkArraySimilar(
+    ["Javascript"],
+    ["Javascript"]
+    )
 
 
 
