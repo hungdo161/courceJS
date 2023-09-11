@@ -1517,10 +1517,99 @@ checkArraySimilar(
     )
 
 
+// Exercise 88: Viết chương trình Javascript nhận vào hai số nguyên và 1 ước số. Nếu ước số đã cho chia cả hai số nguyên
+// và không chia hết thì 2 số nguyên đã cho là tương tự nhau. Kiểm tra xem 2 số nguyên có giống nhau hay không. 
+
+const getExercise88Result = document.querySelector(".exercise88Result");
+
+const checkSimilarIntegers = function(integer1,integer2,divisor) {
+    if(integer1 % divisor == 0 && integer2 % divisor == 0) {
+        return getExercise88Result.innerHTML = `<i>The given divisor is divides by both integers.</i>`
+    } else {
+        if(integer1 == integer2) {
+            return getExercise88Result.innerHTML = `<i>Two specified integers are similar.</i>`
+        }else {
+            return getExercise88Result.innerHTML = `<i>Two specified integers not similar.</i>`
+        }
+    }    
+}
+
+checkSimilarIntegers(50,50,8);
+
+// exercise 89: Viết chương trình Javascript để kiểm tra xem có thể thay thế $ trong 1 biêu thức x$y=z 
+// bằng 1 trong 4 dấu +,-,* hoặc / để thu được biểu thức đúng hay không.
+
+// x = 10, y = 30 và z = 300 thì ta có thể thay $ bằng toán tử bội(*) để thu được biểu thức đúng x*y=z.
+
+const getExercise89Result = document.querySelector(".exercise89Result");
+
+const correctExpression = function(x,y,z) {
+     if (x * y == z) {
+        return getExercise89Result.innerHTML = ` ${x} * ${y} = ${z} `;
+     } else if (x  / y == z) {
+        return getExercise89Result.innerHTML = `${x} / ${y} = ${z} `;
+     } else if (x + y == z) {
+        return getExercise89Result.innerHTML = `${x} + ${y} = ${z} `;
+     } else if(x - y == z){
+        return getExercise89Result.innerHTML = `${x} - ${y} = ${z} `;
+     } else {
+        getExercise89Result.innerHTML = `<i>Given expression has no meaning.</i>`;
+     }
+}
+
+correctExpression(6,2,8);
+
+// Exercise 90: Viết chương trình javascript để tìm phần tử lớn thứ k trong 1 mảng sô nguyên cho trước. 
+
+const getExercise90Result = document.querySelector(".exercise90Result");
+
+const kThFindIndexInArray = function(array,k) {
+    if (array.length <= k) {
+        return getExercise90Result.innerHTML = `serial number K does not exist.`
+    } else {
+        return getExercise90Result.innerHTML = array[k-1];
+    }
+}
+kThFindIndexInArray([1,2,6,4,5], 3)
+
+// Exercise 91: Viết chương trình javascript để tìm tổng số tối đa có thể cảu 1 số k liên tiếp của nó(các số nối tiếp nhau theo thứ tự) 
+// trong một mảng số nguyên dương cho trước.\
+
+const getExercise91Result = document.querySelector('.exercise91Result');
+
+const findMaxTotal = function(array,k) {
+    // check if the array length is less than k ( Kiểm tra xem độ dài của mảng có nhỏ hơn hoặc bằng k không)
+    if (array.length <= k) {
+        total = 0;
+        for (let i = 0; i < array.length; i++) {
+            total += array[i];
+        }
+        return total;
+    } else {
+        // initialize the sum of the first k elements (Khởi tạo tổng của k phần từ đầu tiên.)
+        let sum = 0;
+        for (let i = 0; i < k ; i++) {
+            sum += array[i];
+        }
+         // initialize the maximum sum as the current sum( Khởi tạo tổng tối đa là tổng hiện tại)
+        let max = sum;
+         // loop through the remaining elements( lặp qua các phần tử còn lại)
+        for (let i = k; i < array.length; i++) {
+            // update the current sum by adding the next element and subtracting the first element of the previous window.
+            // Cập nhật tổng hiện tại bằng cách cộng các phần tử tiếp theo và trừ đi phần tử đầu tiên của phần trước đó.
+            sum = sum + array[i] - array[i -k];
+             // update the maximum sum if the current sum is greater
+             // Cập nhật số lớn nhất nếu tổng hiện tại lớn hơn.
+            max = Math.max(max,sum);
+        }
+         // return the maximum sum
+         // trả về sum lớn nhất
+        return max;
+    }  
+}
 
 
-
-
+console.log(findMaxTotal([1,8,9,9,5], 5))
 
 
 
