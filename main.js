@@ -1609,10 +1609,41 @@ const findMaxTotal = function(array,k) {
 }
 
 
-console.log(findMaxTotal([1,8,9,9,5], 5))
+findMaxTotal([1,8,9,9,5], 5)
+
+// Exercise 92: Viết chương trình javascript để tìm sự khác biệt lớn nhất giữa hai phần tử
+// liền kề bất kỳ của 1 mảng số nguyên cho trước.
+
+const getExercise92Result = document.querySelector(".exercise92Result");
+
+const checkAbsMaximum = function (array) {
+    // let max = -1;
+    for(let i = 0; i < array.length -1; i++) {
+        temp = Math.max(array[i], array[i+1])
+        // max = Math.max(max,temp)
+    }
+    return getExercise92Result.innerHTML = temp;
+}
+
+checkAbsMaximum([5,10,8,5,12,87])
+
+// Exercise 93: Viết chương trình Javascript để tìm sự khác biệt lớn nhất giữa các cặp có thể có của 
+// một mảng số nguyên cho trước. 
+
+const getExercise93Result = document.querySelector(".exercise93Result");
+
+const maximumDifferenceFind = function(array) {
+    let maxResult = 0;
+    for (let i = 0; i < array.length; i++) {
+        for(let j = 0; j != i; j++) {
+            diffValue = Math.abs(array[i] - array[j]);
+            maxResult = Math.max(diffValue,maxResult)
+        }
+    }
+    return getExercise93Result.innerHTML = maxResult
+}   
 
 
-
-
+maximumDifferenceFind([5,6,7,100,8,9,-500])
 
 
